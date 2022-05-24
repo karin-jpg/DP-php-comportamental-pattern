@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatter;
+namespace DesignPattern;
 
 class Budget 
 {
