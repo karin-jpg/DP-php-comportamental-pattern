@@ -10,4 +10,4 @@ $budget = new Budget();
 
 $budget->value = 100;
 
-echo $taxCalculator->calculate($budget);
+echo $taxCalculator->calculateTax($budget);
