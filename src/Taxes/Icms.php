@@ -2,8 +2,12 @@
 
 namespace DesignPattern\Taxes;
 
+use DesignPattern\Budget;
+
 class Icms 
 {
-  public float $value;
-
+  public function calculateTax(Budget $budget) 
+  {
+    return $budget->value * 0.06;
+  }
 }
