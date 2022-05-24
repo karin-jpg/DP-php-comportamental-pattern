@@ -2,7 +2,8 @@
 
 namespace DesignPatter;
 
-class Budget {
+class Budget 
+{
 
-  
+
 }
