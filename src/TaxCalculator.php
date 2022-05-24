@@ -1,12 +1,13 @@
 <?php
 
 namespace DesignPattern;
+use DesignPattern\Taxes\Tax;
 
 class TaxCalculator
 {
-  public function calculateTax(Budget $budget): float 
+  public function calculateTax(Budget $budget, Tax $tax): float 
   {
-    return $budget->value * 0.1;
+    return $tax->calculateTax($budget);
   }
 
 }

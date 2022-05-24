@@ -2,6 +2,7 @@
 
 use DesignPattern\TaxCalculator;
 use DesignPattern\Budget;
+use DesignPattern\Taxes\Iss;
 
 require 'vendor/autoload.php';
 
@@ -10,4 +11,4 @@ $budget = new Budget();
 
 $budget->value = 100;
 
-echo $taxCalculator->calculateTax($budget);
+echo $taxCalculator->calculateTax($budget, new Iss());
