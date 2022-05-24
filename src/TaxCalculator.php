@@ -4,7 +4,7 @@ namespace DesignPattern;
 
 class TaxCalculator
 {
-  public function calculate(Budget $budget): float 
+  public function calculateTax(Budget $budget): float 
   {
     return $budget->value * 0.1;
   }
