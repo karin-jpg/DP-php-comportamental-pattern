@@ -6,6 +6,9 @@ use DesignPattern\Budget;
 
 abstract class BudgetState 
 {
+  /**
+   * @throws \DomainException
+   */
   abstract public function calculateExtraDiscount(Budget $budget): float;
 
   public function approve(Budget $budget) {
