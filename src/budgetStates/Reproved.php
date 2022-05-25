@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPattern;
+namespace DesignPattern\BudgetState;
 
 use DesignPattern\Budget;
 
