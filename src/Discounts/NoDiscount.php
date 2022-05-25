@@ -9,7 +9,7 @@ class NoDiscount extends Discount
 
   public function __construct()
   {
-    parent::__construct(NULL);
+    parent::__construct(null);
   }
 
   public function calculateDiscounts(Budget $budget): float
