@@ -6,7 +6,7 @@ use DesignPattern\Budget;
 abstract class Discount
 {
 
-  protected Discount $nextDiscount;
+  protected ?Discount $nextDiscount;
 
   public function __construct(?Discount $nextDiscount)
   {
