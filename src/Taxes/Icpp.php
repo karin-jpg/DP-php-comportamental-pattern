@@ -7,12 +7,28 @@ use DesignPattern\Taxes\Tax;
 
 class Icpp implements Tax
 {
+
   public function calculateTax(Budget $budget): float
   {
-    if ($budget->value > 300) {
-      return $budget->value * 0.03;
+    if ($this->mustAplyMaxTax($budget)) {
+      return $this->calculateMaximumTax($budget);
     }
 
-      return $budget->value * 0.02;
+    return $this->calculateMinimumTax($budget);
+  }
+
+  private function mustAplyMaxTax(Budget $budget): bool 
+  {
+    return $budget->value > 300 && $budget->itemsQuantity > 3;
+  }
+
+  private function calculateMaximumTax(Budget $budget): float 
+  {
+    return $budget->value * 0.03;
+  }
+
+  private function calculateMinimumTax(Budget $budget): float
+  {
+    return $budget->value * 0.02;
   }
 }
