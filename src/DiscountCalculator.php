@@ -2,20 +2,23 @@
 
 namespace DesignPattern;
 
+use DesignPattern\Budget;
+use DesignPattern\Discounts\MoreThan500ReaisDiscount;
+use DesignPattern\Discounts\MoreThan5ItemsDiscount;
+use DesignPattern\Discounts\NoDiscount;
+
 class DiscountCalculator 
 {
 
   public function calculateDiscounts(Budget $budget): float
   {
-    if($budget->itemsQuantity > 5) {
-      return $budget->value * 0.1;
-    }
+    
+    $discountChain = new MoreThan5ItemsDiscount(
+      new MoreThan500ReaisDiscount(
+        new NoDiscount()
+      )
+    );
 
-    if($budget->value > 500) {
-      return $budget->value * 0.05;
-    }
-
-    return 0;
+    return $discountChain->calculateDiscounts($budget);
   }
-
 }
