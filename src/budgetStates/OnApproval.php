@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPattern\BudgetState;
+namespace DesignPattern\BudgetStates;
 
 use DesignPattern\Budget;
 
@@ -10,7 +10,7 @@ class OnApproval extends BudgetState
     return $budget->valor * 0.05;
   }
 
-  public function aprove(Budget $budget)
+  public function approve(Budget $budget)
   {
     $budget->currentState = new Approved();
   }
