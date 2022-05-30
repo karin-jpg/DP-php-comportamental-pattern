@@ -1,5 +1,7 @@
 <?php
 
+require 'vendor/autoload.php';
+
 //Strategy implementation
 use DesignPattern\TaxCalculator;
 use DesignPattern\Budget;
@@ -10,8 +12,6 @@ use DesignPattern\Taxes\Iss;
 use DesignPattern\DiscountCalculator;
 use DesignPattern\Taxes\Icpp;
 use DesignPattern\Taxes\Ikcv;
-
-require 'vendor/autoload.php';
 
 /* Tax calculator testing - Strategy implementation
 $taxCalculator = new TaxCalculator();
