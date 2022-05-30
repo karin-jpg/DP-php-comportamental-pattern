@@ -2,19 +2,12 @@
 
 require 'vendor/autoload.php';
 
-use DesignPattern\{Budget, Order};
+use DesignPattern\{Budget, GenerateOrder, Order};
 
 $budgetValue = $argv[1];
 $itemsQuantity = $argv[2];
 $clientName = $argv[3];
 
-$budget = new Budget();
-$budget->value = $budgetValue;
-$budget->itemsQuantity = $itemsQuantity;
+$generateOrder = new GenerateOrder($budgetValue, $itemsQuantity, $clientName);
 
-$order = new Order();
-$order->completionDate = new \DateTimeImmutable();
-$order->clientName = $clientName;
-$order->budget = $budget;
-
-var_dump($order);
+var_dump($generateOrder);
