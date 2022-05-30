@@ -44,3 +44,13 @@ echo $taxCalculator->calculateTax($budget, new Icms());
 // $taxWith2AliquotsCalculator = new Ikcv();
 // echo $taxWith2AliquotsCalculator->calculateTax($budget);
 */
+
+/*New current state testeing - State implementation*/
+// $budget = new Budget();
+// $budget->value = 700;
+// $budget->itemsQuantity = 2;
+// var_dump($budget->currentState);
+// $budget->currentState->approve($budget);
+// var_dump($budget->currentState);
+// $budget->currentState->finalize($budget);
+// var_dump($budget->currentState);
