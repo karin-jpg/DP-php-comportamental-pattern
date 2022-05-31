@@ -2,6 +2,7 @@
 
 namespace DesignPattern\ActionsOnCreateOrder;
 
+use DesignPattern\ActionAfterCreatingOrder\ActionAfterCreatingOrder;
 use DesignPattern\Order;
 
 class SendOrderByEmail implements ActionAfterCreatingOrder
