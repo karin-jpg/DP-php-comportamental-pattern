@@ -4,7 +4,7 @@ namespace DesignPattern\Command;
 
 use DesignPattern\Budget;
 
-class Commandd
+class BudgetsList
 {
   private array $budgets;
 
