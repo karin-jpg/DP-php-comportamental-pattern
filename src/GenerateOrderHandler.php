@@ -21,6 +21,11 @@ class GenerateOrderHandler
     $order->clientName = $generateOrder->getClientName();
     $order->budget = $budget;
 
+
+    echo "Creat order on DB". PHP_EOL;
+    echo "Creat email to client". PHP_EOL;
+    echo "Creat log". PHP_EOL;
+
     echo "order created!". PHP_EOL;
   }
 
