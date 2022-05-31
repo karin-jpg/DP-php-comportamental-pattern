@@ -2,7 +2,7 @@
 
 namespace DesignPattern;
 
-use DesignPattern\Command\Commandd;
+use DesignPattern\Commandd;
 
 class GenerateOrder
 {

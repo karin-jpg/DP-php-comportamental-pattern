@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPattern\Command;
+namespace DesignPattern;
 
 interface Commandd
 {
