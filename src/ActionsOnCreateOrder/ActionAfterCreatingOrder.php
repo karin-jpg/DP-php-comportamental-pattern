@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPattern\ActionAfterCreatingOrder;
+namespace DesignPattern\ActionsOnCreateOrder;
 
 use DesignPattern\Order;
 
