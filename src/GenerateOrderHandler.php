@@ -2,6 +2,9 @@
 
 namespace DesignPattern;
 
+use DesignPattern\ActionsOnCreateOrder\CreateOrderLog;
+use DesignPattern\ActionsOnCreateOrder\CreateOrderOnDB;
+use DesignPattern\ActionsOnCreateOrder\SendOrderByEmail;
 
 class GenerateOrderHandler
 {
@@ -22,9 +25,14 @@ class GenerateOrderHandler
     $order->budget = $budget;
 
 
-    echo "Create order on DB". PHP_EOL;
-    echo "Send email to client". PHP_EOL;
-    echo "Create log". PHP_EOL;
+
+    $orderBD = new CreateOrderOnDB();
+    $orderEmail = new SendOrderByEmail();
+    $orderLog = new CreateOrderLog();
+
+    $orderBD->executeAction($order);
+    $orderEmail->executeAction($order);
+    $orderLog->executeAction($order);
 
     echo "order created!". PHP_EOL;
   }
