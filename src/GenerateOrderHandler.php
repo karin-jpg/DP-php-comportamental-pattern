@@ -23,7 +23,7 @@ class GenerateOrderHandler
 
 
     echo "Create order on DB". PHP_EOL;
-    echo "Create email to client". PHP_EOL;
+    echo "Send email to client". PHP_EOL;
     echo "Create log". PHP_EOL;
 
     echo "order created!". PHP_EOL;
