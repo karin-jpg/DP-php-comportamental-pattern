@@ -9,5 +9,5 @@ $itemsQuantity = $argv[2];
 $clientName = $argv[3];
 
 $generateOrder = new GenerateOrder($budgetValue, $itemsQuantity, $clientName);
-
+$generateOrder->execute();
 var_dump($generateOrder);
