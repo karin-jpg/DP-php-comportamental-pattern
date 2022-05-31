@@ -4,7 +4,7 @@ namespace DesignPattern;
 
 use DesignPattern\Command\Commandd;
 
-class GenerateOrder implements Commandd
+class GenerateOrder
 {
 
   private float $budgetValue;
@@ -17,20 +17,20 @@ class GenerateOrder implements Commandd
     $this->itemsQuantity = $itemsQuantity;
     $this->clientName = $clientName;
   }
-
-  public function execute(): void
+ 
+  public function getBudgetValue(): float
   {
-    $budget = new Budget();
-    $budget->value = $this->budgetValue;
-    $budget->itemsQuantity = $this->itemsQuantity;
-    
-    $order = new Order();
-    $order->completionDate = new \DateTimeImmutable();
-    $order->clientName = $this->clientName;
-    $order->budget = $budget;
+    return $this->budgetValue;
+  }
 
-    echo "order created!". PHP_EOL;
-    
+  public function getItemsQuantity(): int
+  {
+    return $this->itemsQuantity;
+  }
+
+  public function getClientName(): string
+  {
+    return $this->clientName;
   }
 
 }
