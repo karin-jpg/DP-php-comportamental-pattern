@@ -29,10 +29,18 @@ $budgetsList->addBudget($budget1);
 $budgetsList->addBudget($budget2);
 $budgetsList->addBudget($budget3);
 
-foreach ($budgetsList as $budget) {
+foreach ($budgetsList->getIterator() as $budget) {
   echo "Value: ". $budget->value .PHP_EOL;
   echo "State: ". get_class($budget->currentState) .PHP_EOL;
   echo "items quantity: ". $budget->itemsQuantity .PHP_EOL;
   echo PHP_EOL;
+}
 
+echo PHP_EOL;
+
+foreach ($budgetsList->getFinalizedBudgets() as $budget) {
+  echo "Value: ". $budget->value .PHP_EOL;
+  echo "State: ". get_class($budget->currentState) .PHP_EOL;
+  echo "items quantity: ". $budget->itemsQuantity .PHP_EOL;
+  echo PHP_EOL;
 }
