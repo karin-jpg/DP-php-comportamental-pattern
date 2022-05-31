@@ -4,7 +4,7 @@ namespace DesignPattern\ActionsOnCreateOrder;
 
 use DesignPattern\Order;
 
-class CreateOrderOnDB
+class CreateOrderOnDB implements ActionAfterCreatingOrder
 {
 
   public function executeAction(Order $order): void

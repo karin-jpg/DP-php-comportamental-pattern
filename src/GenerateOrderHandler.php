@@ -8,9 +8,17 @@ use DesignPattern\ActionsOnCreateOrder\SendOrderByEmail;
 
 class GenerateOrderHandler
 {
+
+  private array $actionsAfterCreatingOrder = array();
   public function __construct()
   {
   
+  }
+
+
+  public function AddAction()
+  {
+    
   }
 
   public function execute(GenerateOrder $generateOrder)
@@ -34,7 +42,7 @@ class GenerateOrderHandler
     $orderEmail->executeAction($order);
     $orderLog->executeAction($order);
 
-    echo "order created!". PHP_EOL;
+    echo "order created!". PHP_EOL;  
   }
 
 }
