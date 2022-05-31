@@ -24,4 +24,8 @@ class BudgetsList implements \IteratorAggregate
     return new \ArrayIterator($this->budgets);
   }
 
+  public function getFinalizedBudgets(): Traversable
+  {
+    return new \ArrayIterator(array_filter($this->budgets, fn (Budget $budget) => $budget->currentState instanceof \DesignPattern\BudgetStates\Finalized));  }
+
 }
