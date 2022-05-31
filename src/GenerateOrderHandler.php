@@ -2,6 +2,7 @@
 
 namespace DesignPattern;
 
+use DesignPattern\ActionsOnCreateOrder\ActionAfterCreatingOrder;
 use DesignPattern\ActionsOnCreateOrder\CreateOrderLog;
 use DesignPattern\ActionsOnCreateOrder\CreateOrderOnDB;
 use DesignPattern\ActionsOnCreateOrder\SendOrderByEmail;
@@ -16,9 +17,9 @@ class GenerateOrderHandler
   }
 
 
-  public function AddAction()
+  public function AddActionAfterCreatingOrder(ActionAfterCreatingOrder $action)
   {
-    
+    $this->actionsAfterCreatingOrder[] = $action;
   }
 
   public function execute(GenerateOrder $generateOrder)
@@ -32,15 +33,10 @@ class GenerateOrderHandler
     $order->clientName = $generateOrder->getClientName();
     $order->budget = $budget;
 
-
-
-    $orderBD = new CreateOrderOnDB();
-    $orderEmail = new SendOrderByEmail();
-    $orderLog = new CreateOrderLog();
-
-    $orderBD->executeAction($order);
-    $orderEmail->executeAction($order);
-    $orderLog->executeAction($order);
+    foreach($this->actionsAfterCreatingOrder as $action) {
+      $action->executeAction($order);
+    }
+    
 
     echo "order created!". PHP_EOL;  
   }
