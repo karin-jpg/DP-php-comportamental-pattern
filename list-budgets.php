@@ -4,6 +4,7 @@
 require 'vendor/autoload.php';
 
 use DesignPattern\Budget;
+use DesignPattern\BudgetsList;
 
 $budget1 = new Budget();
 $budget1->itemsQuantity = 7;
@@ -23,7 +24,12 @@ $budget3->value = 79;
 
 $budgetsList = [$budget1, $budget2, $budget3];
 
-foreach ($budgetsList as $budget) {
+$budgetsList = new BudgetsList();
+$budgetsList->addBudget($budget1);
+$budgetsList->addBudget($budget2);
+$budgetsList->addBudget($budget3);
+
+foreach ($budgetsList->budgets() as $budget) {
   echo "Value: ". $budget->value .PHP_EOL;
   echo "State: ". get_class($budget->currentState) .PHP_EOL;
   echo "items quantity: ". $budget->itemsQuantity .PHP_EOL;
