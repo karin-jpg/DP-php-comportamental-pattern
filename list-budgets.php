@@ -29,7 +29,7 @@ $budgetsList->addBudget($budget1);
 $budgetsList->addBudget($budget2);
 $budgetsList->addBudget($budget3);
 
-foreach ($budgetsList->budgets() as $budget) {
+foreach ($budgetsList as $budget) {
   echo "Value: ". $budget->value .PHP_EOL;
   echo "State: ". get_class($budget->currentState) .PHP_EOL;
   echo "items quantity: ". $budget->itemsQuantity .PHP_EOL;

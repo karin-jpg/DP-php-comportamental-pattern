@@ -3,8 +3,9 @@
 namespace DesignPattern;
 
 use DesignPattern\Budget;
+use Traversable;
 
-class BudgetsList
+class BudgetsList implements \IteratorAggregate
 {
   private array $budgets;
 
@@ -18,9 +19,9 @@ class BudgetsList
     $this->budgets[] = $budget;
   }
 
-  public function budgets(): array
+  public function getIterator(): Traversable
   {
-    return $this->budgets;
+    return new \ArrayIterator($this->budgets);
   }
 
 }
